@@ -1,0 +1,6 @@
+goos: darwin
+goarch: arm64
+pkg: local/performance_benchmarking/go_bench/basic
+BenchmarkIsValidEmail-8   	 2201695	      2738 ns/op	     362 B/op	       4 allocs/op
+PASS
+ok  	local/performance_benchmarking/go_bench/basic	9.392s
