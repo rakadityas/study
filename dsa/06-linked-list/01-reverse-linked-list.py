@@ -10,12 +10,12 @@ class ListNode:
         if not values:
             return None
 
-        head = cls(values[0])
+        head = cls()
         current = head
-        for val in values[1:]:
-            current.next = cls(val)
+        for val in range(len(values)):
+            current.next = cls(values[val])
             current = current.next
-        return head
+        return head.next
 
     def toList(self) -> list[int]:
         result = []
