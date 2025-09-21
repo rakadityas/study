@@ -1,4 +1,5 @@
 import heapq
+# HEAP BY DEFAULT IS SMALL HEAP
 
 #### Basic Operations
 # Create a heap from a list
