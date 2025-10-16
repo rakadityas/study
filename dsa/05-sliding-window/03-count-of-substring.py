@@ -1,22 +1,21 @@
 class SolutionOne:
     def countOfSubstring(self, s: str) -> int:
-        l, r = 0, 0
+        l = 0
         mapHistory = {}
         numSubstring = 0
 
         if s == "":
             return 0
 
-        while r < len(s):
-            if s[r] in mapHistory:
+        for i in range(len(s)):
+            if s[i] in mapHistory:
                 numSubstring += 1
 
-                while l != r:
+                while l != i:
                     del mapHistory[s[l]]
                     l += 1
             
-            mapHistory[s[r]] = True
-            r += 1
+            mapHistory[s[i]] = True
 
         return numSubstring+1
                 
