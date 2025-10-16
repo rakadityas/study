@@ -63,9 +63,9 @@ class SolutionTwo:
 
 if __name__ == "__main__":
     s = SolutionTwo()
-    # assert s.combinationSum2([10,1,2,7,6,1,5], 8).sort() == [[1,1,6],[1,2,5],[1,7],[2,6]].sort()
+    assert s.combinationSum2([10,1,2,7,6,1,5], 8).sort() == [[1,1,6],[1,2,5],[1,7],[2,6]].sort()
     # assert s.combinationSum2([2,5,2,1,2],5).sort() == [[1,2,2],[5]].sort()
-    assert s.combinationSum2([1,1,1,1,1,1],5).sort() == [[1,2,2],[5]].sort()
+    # assert s.combinationSum2([1,1,1,1,1,1],5).sort() == [[1,2,2],[5]].sort()
     # assert s.combinationSum2([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], 30) == 10 ## super slow
             
             
