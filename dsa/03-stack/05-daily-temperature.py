@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/daily-temperatures/description/
+# time complexity: O(n)
+# space complexity: O(n)
+
 class Solution:
     def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
         res = [0] * len(temperatures)

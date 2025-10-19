@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+# time complexity: O(n)
+# space complexity: O(n)
+
 from typing import Optional, List
 
 class TreeNode:

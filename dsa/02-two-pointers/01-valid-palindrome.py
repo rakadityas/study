@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/valid-palindrome/description/
+# time complexity: O(n)
+# space complexity: O(1)
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:

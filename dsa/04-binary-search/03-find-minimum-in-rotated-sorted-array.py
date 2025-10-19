@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
+# time complexity: O(log(n))
+# space complexity: O(1)
 
 class Solution:
     def findMin(self, nums: list[int]) -> int:

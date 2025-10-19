@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/diameter-of-binary-tree/
+# https://leetcode.com/problems/diameter-of-binary-tree/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 from typing import List, Optional
 

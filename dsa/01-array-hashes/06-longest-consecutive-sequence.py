@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/longest-consecutive-sequence/description/
+# time complexity: O(n)
+# space complexity: O(n)
+
 from collections import defaultdict
 
 class Solution:

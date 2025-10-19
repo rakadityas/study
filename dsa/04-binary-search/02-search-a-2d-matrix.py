@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/search-a-2d-matrix/description/
+# time complexity: O(log(m*n))
+# space complexity: O(1)
 
 class Solution:
     def searchMatrix(self, matrix: list[list[int]], target: int) -> bool:

@@ -1,4 +1,8 @@
-# https://leetcode.com/problems/word-search/
+# https://leetcode.com/problems/word-search/description/
+# time complexity: O(m*n*4^len(word))
+# space complexity: O(len(word))
+
+from typing import List
 
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:

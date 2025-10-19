@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/generate-parentheses/description/
+# time complexity: O(2^n)
+# space complexity: O(n)
 
 class Solution:
     def __init__(self):

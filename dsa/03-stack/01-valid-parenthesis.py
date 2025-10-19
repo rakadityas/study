@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/valid-parentheses/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 class Solution:
     def isValid(self, s:str) -> bool:

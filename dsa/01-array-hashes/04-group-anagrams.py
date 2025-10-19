@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/group-anagrams/description/
+# time complexity: O(n * m)
+# space complexity: O(n * m)
+
 from collections import defaultdict
 
 class Solution:

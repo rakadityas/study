@@ -1,4 +1,7 @@
-# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+# https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+# time complexity: O(n)
+# space complexity: O(n)
+
 from typing import Optional
 
 class TreeNode:

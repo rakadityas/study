@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/count-number-of-substrings-with-exactly-k-distinct-characters/description/
+# time complexity: O(n)
+# space complexity: O(n)
+
 class SolutionOne:
     def countOfSubstring(self, s: str) -> int:
         l = 0

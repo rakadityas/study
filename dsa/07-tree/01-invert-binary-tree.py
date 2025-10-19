@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/invert-binary-tree/
+# https://leetcode.com/problems/invert-binary-tree/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 from typing import Optional, List
 

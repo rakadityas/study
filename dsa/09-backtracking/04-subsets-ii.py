@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/subsets-ii/
+# https://leetcode.com/problems/subsets-ii/description/
+# time complexity: O(2^n)
+# space complexity: O(n)
 
 from typing import List
 from collections import defaultdict

@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 class Solution:
     def evalRPN(self, tokens: list[str]) -> int:

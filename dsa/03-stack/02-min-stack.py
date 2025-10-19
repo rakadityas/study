@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/min-stack/description/
+# time complexity: O(1)
+# space complexity: O(n)
 
 class MinStack:
     def __init__(self):

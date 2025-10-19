@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/permutations/
+# https://leetcode.com/problems/permutations/description/
+# time complexity: O(n!)
+# space complexity: O(n)
 
 from typing import List
 

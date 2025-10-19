@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/contains-duplicate/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 from collections import defaultdict
 

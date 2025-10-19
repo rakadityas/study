@@ -1,3 +1,6 @@
+# not found
+# time complexity: O(n)
+# space complexity: O(n)
 
 class Solution:
     def removeOccurrences(self, s: str) -> str:

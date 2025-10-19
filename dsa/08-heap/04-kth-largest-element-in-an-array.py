@@ -1,4 +1,7 @@
-# https://leetcode.com/problems/kth-largest-element-in-an-array/
+# https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+# time complexity: O(nlogk)
+# space complexity: O(k)
+
 import heapq
 
 class Solution:

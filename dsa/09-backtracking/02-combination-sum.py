@@ -1,4 +1,7 @@
-# https://leetcode.com/problems/combination-sum/
+# https://leetcode.com/problems/combination-sum/description/
+# time complexity: O(2^n)
+# space complexity: O(n)
+
 from typing import List
 
 class Solution:

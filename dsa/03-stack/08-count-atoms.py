@@ -1,6 +1,10 @@
+# time complexity: O(n)
+# space complexity: O(n)
+
 # it is known that
 # C = 12
 # H = 1
+
 
 from typing import List
 

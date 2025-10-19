@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/add-two-numbers/
+# https://leetcode.com/problems/add-two-numbers/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 from typing import Optional
 

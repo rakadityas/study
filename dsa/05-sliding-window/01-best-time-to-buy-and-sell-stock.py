@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+# time complexity: O(n)
+# space complexity: O(1)
 
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:

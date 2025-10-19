@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+# https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 class Solution:
     def removeDuplicates(self, s: str) -> str:

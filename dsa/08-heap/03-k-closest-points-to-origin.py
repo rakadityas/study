@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/k-closest-points-to-origin
+# https://leetcode.com/problems/k-closest-points-to-origin/description/
+# time complexity: O(nlogk)
+# space complexity: O(k)
 
 from typing import List
 import heapq

@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+# https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 from typing import Optional
 

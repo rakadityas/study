@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/subsets/
+# https://leetcode.com/problems/subsets/description/
+# time complexity: O(2^n)
+# space complexity: O(n)
 
 class Solution:
     def subsets(self, nums: list[int]) -> list[list[int]]:

@@ -1,4 +1,7 @@
 # https://leetcode.com/problems/validate-binary-search-tree/description/
+# time complexity: O(n)
+# space complexity: O(n)
+
 from typing import Optional, List
 class TreeNode:
     def __init__(self, val: int = 0, left: Optional["TreeNode"] = None, right: Optional["TreeNode"] = None):

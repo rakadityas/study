@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/container-with-most-water/description/
+# time complexity: O(n)
+# space complexity: O(1)
 
 class Solution:
     def maxArea(self, height: list[int]) -> int:

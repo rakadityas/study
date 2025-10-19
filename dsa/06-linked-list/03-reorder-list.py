@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/reorder-list/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 from typing import Optional
 

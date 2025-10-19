@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/binary-search/description/
+# time complexity: O(log(n))
+# space complexity: O(1)
 
 class Solution:
     def search(self, nums: list[int], target: int) -> int:

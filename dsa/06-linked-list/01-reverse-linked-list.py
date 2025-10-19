@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/reverse-linked-list/description/
+# time complexity: O(n)
+# space complexity: O(1)
+
 from typing import Optional
 
 class ListNode:

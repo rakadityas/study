@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/copy-list-with-random-pointer/description/
+# time complexity: O(n)
+# space complexity: O(n)
+
 from typing import Optional
 from collections import defaultdict
 

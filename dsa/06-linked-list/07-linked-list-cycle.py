@@ -1,4 +1,6 @@
-# https://leetcode.com/problems/linked-list-cycle/
+# https://leetcode.com/problems/linked-list-cycle/description/
+# time complexity: O(n)
+# space complexity: O(n)
 
 from typing import Optional
 

@@ -1,4 +1,9 @@
-# https://leetcode.com/problems/last-stone-weight/
+# https://leetcode.com/problems/last-stone-weight/description/
+# time complexity: O(nlogn)
+# space complexity: O(n)
+
+from typing import Optional, List
+import heapq
 
 class Solution:
     def lastStoneWeight(self, stones: list[int]) -> int:

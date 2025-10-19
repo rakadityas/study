@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/time-based-key-value-store/description/
+# time complexity: O(log(n))
+# space complexity: O(n)
+
 from collections import defaultdict
 
 class TimeMap:
