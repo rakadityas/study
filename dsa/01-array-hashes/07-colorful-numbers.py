@@ -17,5 +17,10 @@ def is_colorful(number):
     
     return True
 
+if __name__ == "__main__":
+    assert is_colorful(326) == False
+    assert is_colorful(3245) == True
+
+
 
 
