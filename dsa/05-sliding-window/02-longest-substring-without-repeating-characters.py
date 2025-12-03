@@ -6,31 +6,44 @@ from collections import defaultdict
 
 class Solution:
     def lenghthOfLongestSubstring(self, s:str) -> int:
-        l = 0
-        r = 0
+        left = 0
 
         maxCounter = 0
         
         mapHistory = defaultdict(bool)
 
-        while r < len(s):
-            while s[r] in mapHistory:
-                del mapHistory[s[l]]
-                l += 1
+        for i in range(len(s)):
+            while s[i] in mapHistory:
+                del mapHistory[s[left]]
+                left += 1
             
-            mapHistory[s[r]] = True
-            maxCounter = max(maxCounter, r-l+1)
-            
-            r += 1
+            mapHistory[s[i]] = True
+    
+            maxCounter = max(maxCounter, i-left+1)
 
         return maxCounter
+    
+    def lengthOfLongestSubstringLastSeen(self, s: str) -> int:
+        left = 0 
+        mapHistory = defaultdict(int)
+        maxCounter = 0
+        
+        for i in range(len(s)):
+            if s[i] in mapHistory:
+                left = max(left, mapHistory[s[i]]+1)
+            mapHistory[s[i]] = i
+            maxCounter = max(maxCounter, i-left+1)
+        return maxCounter
+        
 
 if __name__ == "__main__":
     solution = Solution()
 
-    print(solution.lenghthOfLongestSubstring("abcabcbb"))
-
     assert solution.lenghthOfLongestSubstring("abcabcbb") == 3
     assert solution.lenghthOfLongestSubstring("bbbbb") == 1
     assert solution.lenghthOfLongestSubstring("pwwkew") == 3
+
+    assert solution.lengthOfLongestSubstringLastSeen("abcabcbb") == 3
+    assert solution.lengthOfLongestSubstringLastSeen("bbbbb") == 1
+    assert solution.lengthOfLongestSubstringLastSeen("pwwkew") == 3
 
