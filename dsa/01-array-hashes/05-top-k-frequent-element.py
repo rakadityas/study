@@ -27,9 +27,36 @@ class Solution:
             del mapGroupNums[maxKey]
         
         return res
+    
+    def topKFrequentBucketSort(self, nums: list[int], k: int) -> list[int]:
+        lenNums = len(nums)
+        mapCounter = defaultdict(int)
+        for i in range(lenNums):
+            mapCounter[nums[i]] += 1
+        
+        bucket = []
+        for i in range(lenNums+1):
+            bucket.append([])
+                
+        for key, val in mapCounter.items():
+            bucket[val].append(key)
+        
+        res = []
+
+        for freq in range(lenNums, 0, -1):
+            if bucket[freq]:
+                for i in range(len(bucket[freq])):
+                    res.append(bucket[freq][i])
+                    if len(res) == k:
+                        return res
+        return res
+
 
 if __name__ == "__main__":
     solution = Solution()
 
     assert solution.topKFrequent([1,1,1,2,2,3], 2) == [1,2]
     assert solution.topKFrequent([1], 1) == [1]
+
+    assert solution.topKFrequentBucketSort([1,1,1,2,2,3], 2) == [1,2]
+    assert solution.topKFrequentBucketSort([1], 1) == [1]
