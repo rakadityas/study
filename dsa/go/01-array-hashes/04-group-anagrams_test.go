@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/rakadityas/dsa/go/common"
+	"github.com/rakadityas/study/dsa/go/common"
 )
 
 func groupAnagrams(strs []string) [][]string {
