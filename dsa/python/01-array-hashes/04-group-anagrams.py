@@ -12,7 +12,7 @@ class Solution:
         for i in range(len(strs)):
             arrWordCounter = [0] * 26
             for j in range(len(strs[i])):
-                arrWordCounter[ord('a')-ord(strs[i][j])] += 1
+                arrWordCounter[ord(strs[i][j])-ord('a')] += 1
                 
             mapRespGroup[tuple(arrWordCounter)].append(strs[i])
         
