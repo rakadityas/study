@@ -6,24 +6,25 @@ from collections import defaultdict
 
 class Solution:
     def longestConsecutive(self, nums: list[int]) -> int:
+        if not nums:
+            return 0
+
+        mapHistory = defaultdict(bool)
+        for n in nums:
+            mapHistory[n] = True
 
         maxSequence = 0
 
-        mapHistory = defaultdict(bool)
-        for i in range(len(nums)):
-            mapHistory[nums[i]] = True
-
-        for i in range(len(nums)):
-            if nums[i]-1 in mapHistory:
+        for n in mapHistory:
+            if n - 1 in mapHistory:
                 continue
 
             counter = 0
-            while nums[i]+counter in mapHistory:
+            while n + counter in mapHistory:
                 counter += 1
             
-            if counter > maxSequence:
-                maxSequence = counter
-        
+            maxSequence = max(maxSequence, counter)
+
         return maxSequence
     
 
