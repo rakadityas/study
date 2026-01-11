@@ -4,27 +4,20 @@
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        
-        l = 0
-        r = len(s)-1
-
-        s = s.lower()
+        l, r = 0, len(s) - 1
 
         while l < r:
-            if s[l].isalnum() == False:
+            while l < r and not s[l].isalnum():
                 l += 1
-                continue
-
-            if s[r].isalnum() == False:
+            while l < r and not s[r].isalnum():
                 r -= 1
-                continue
-
-            if s[l] != s[r]:
-                return False
             
+            if s[l].lower() != s[r].lower():
+                return False
+
             l += 1
             r -= 1
-        
+            
         return True
 
 if __name__ == "__main__":
