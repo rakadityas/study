@@ -3,29 +3,20 @@
 # space complexity: O(1)
 
 class Solution:
-    def maxArea(self, height: list[int]) -> int:
-
-        l = 0
-        r = len(height)-1
-
-        highestNum = 0
+    def maxArea(self, height: List[int]) -> int:
+        l, r = 0, len(height)-1
+        maxArea = 0
 
         while l < r:
-            baseNum = height[r]
+            currHeight = min(height[l], height[r])
+            maxArea = max(currHeight * (r-l), maxArea)
+            
             if height[l] < height[r]:
-                baseNum = height[l]
-            
-            value = baseNum * (r-l)
-
-            if highestNum < value:
-                highestNum = value
-            
-            if height[l] > height[r]:
-                r -= 1
-            else:
                 l += 1
-            
-        return highestNum
+            else:
+                r -= 1
+        
+        return maxArea
 
 if __name__ == "__main__":
     solution = Solution()
