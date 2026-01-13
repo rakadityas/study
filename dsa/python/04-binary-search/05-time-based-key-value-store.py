@@ -9,31 +9,29 @@ class TimeMap:
         self.timeMap = defaultdict(list)
 
     def set(self, key: str, value: str, timestamp: int) -> None:
-        if not self.timeMap[key]:
-            self.timeMap[key] = []
-
         self.timeMap[key].append([value, timestamp])
-        
+
     def get(self, key: str, timestamp: int) -> str:
         if key not in self.timeMap:
             return ""
-        
-        timeMapArr = self.timeMap[key]
-        l, r = 0, len(timeMapArr) - 1
 
-        latestData = timeMapArr[-1]
+        arr = self.timeMap[key]
+        l, r = 0, len(arr) - 1
+        res = ""
 
         while l <= r:
-            mid = (l+r)//2
-            midValue, midTimestamp = timeMapArr[mid]
+            mid = (l + r) // 2
+            midValue, midTimestamp = arr[mid]
+            
             if midTimestamp == timestamp:
                 return midValue
-            elif timeMapArr[l][1] > midTimestamp:
-                l = mid+1
+            elif midTimestamp < timestamp:
+                res = midValue
+                l = mid + 1
             else:
-                r = mid-1
-            
-        return latestData[0]
+                r = mid - 1
+
+        return res
 
 
 # Your TimeMap object will be instantiated and called as such:
