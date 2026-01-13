@@ -3,16 +3,16 @@
 # space complexity: O(1)
 
 class Solution:
-    def findMin(self, nums: list[int]) -> int:
-        l = 0
-        r = len(nums) - 1
+    def findMin(self, nums: List[int]) -> int:
+        l, r = 0, len(nums) - 1
 
-        while l <= r:
-            mid = (l+r)//2
-            if nums[l] > nums[r]:
+        while l < r:
+            mid = (l + r) // 2
+
+            if nums[mid] > nums[r]:
                 l = mid + 1
             else:
-                r = mid - 1
+                r = mid
 
         return nums[l]
             
