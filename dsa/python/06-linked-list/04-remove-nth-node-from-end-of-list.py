@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 # time complexity: O(n)
-# space complexity: O(n)
+# space complexity: O(1)
 
 from typing import Optional
 
@@ -33,7 +33,7 @@ class ListNode:
         print(" -> ".join(map(str, self.toList())) + " -> None")
 
 class Solution:
-    
+    # uses o(n) time and space 
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         nodeArr = []
 
@@ -49,6 +49,32 @@ class Solution:
 
         nodeArr[idx-1].next = nodeArr[idx].next
         
+        return head
+    
+    # uses o(n) time and o(1) space 
+    def removeNthFromEndOptimal(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:        
+        counter = 0
+        curr = head
+        while curr:
+            counter += 1
+            curr = curr.next
+        
+        targetIdx = counter-n
+        if targetIdx == 0:
+            return head.next
+        
+        currIdx = 1
+        prev = head
+        curr = head.next
+        while curr:
+            if currIdx == targetIdx:
+                prev.next = curr.next
+                break
+            
+            currIdx += 1
+            prev = curr
+            curr = curr.next
+
         return head
 
 if __name__ == "__main__":
