@@ -5,23 +5,18 @@
 from collections import defaultdict
 
 class Solution:
-    def lenghthOfLongestSubstring(self, s:str) -> int:
-        left = 0
-
-        maxCounter = 0
-        
-        mapHistory = defaultdict(bool)
-
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        dictHistory = defaultdict(bool)
+        res, l = 0, 0
         for i in range(len(s)):
-            while s[i] in mapHistory:
-                del mapHistory[s[left]]
-                left += 1
+            while s[i] in dictHistory:
+                del dictHistory[s[l]]
+                l += 1
             
-            mapHistory[s[i]] = True
-    
-            maxCounter = max(maxCounter, i-left+1)
-
-        return maxCounter
+            res = max(res, i-l+1)
+            dictHistory[s[i]] = True
+        
+        return res
     
     def lengthOfLongestSubstringLastSeen(self, s: str) -> int:
         left = 0 
