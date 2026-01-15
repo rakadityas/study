@@ -23,29 +23,26 @@ class Solution:
         if head is None:
             return None
 
-        # Step 1: Create a mapping from original nodes to their copies
         node_map = {}
 
         current = head
-        while current is not None:
+        while current:
             copy_node = Node(current.val)
             node_map[current] = copy_node
             current = current.next
 
-        # Step 2: Assign next and random pointers for each copied node
         current = head
-        while current is not None:
-            if current.next is not None:
+        while current:
+            if current.next:
                 node_map[current].next = node_map[current.next]
             else:
                 node_map[current].next = None
 
-            if current.random is not None:
+            if current.random:
                 node_map[current].random = node_map[current.random]
             else:
                 node_map[current].random = None
 
             current = current.next
 
-        # Step 3: Return the copied head node
         return node_map[head]
