@@ -43,6 +43,7 @@ class ListNode:
 
 
 class Solution:
+    # time and space o(n)
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         curr = head
         mapHistory = {}
@@ -51,6 +52,18 @@ class Solution:
                 return True
             mapHistory[curr] = True
             curr = curr.next
+        
+        return False
+
+    # time o(n) and space o(1)
+    def hasCycleOptimal(self, head: Optional[ListNode]) -> bool:
+        slow = head
+        fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if slow == fast:
+                return True
         
         return False
 
