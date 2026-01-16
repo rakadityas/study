@@ -55,6 +55,26 @@ class Solution:
         
         maxCounter = max(self.dfs(root.left, counter+1), self.dfs(root.right, counter+1))
         return maxCounter
+    
+    # iterative more optimal
+    def maxDepthIterative(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0
+        
+        maxDepth = 0
+        stack = [(root, 1)]
+
+        while stack:
+            curr, depth = stack.pop()
+            
+            maxDepth = max(maxDepth, depth)
+            
+            if curr.left:
+                stack.append((curr.left, depth+1))
+            if curr.right:
+                stack.append((curr.right, depth+1))
+         
+        return maxDepth
 
 if __name__ == "__main__":
     solution = Solution()
