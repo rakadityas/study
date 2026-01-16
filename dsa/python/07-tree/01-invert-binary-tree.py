@@ -46,6 +46,8 @@ class TreeNode:
         return result
 
 class Solution:
+    # time complexity: O(n)
+    # space complexity: O(n)
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if root is None:
             return None
@@ -57,6 +59,26 @@ class Solution:
         self.invertTree(root.left)
         self.invertTree(root.right)
         return root
+    
+    # better
+    def invertTreeIterative(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return root
+        
+        stack = [root]
+        while stack:
+            curr = stack.pop()
+            temp = curr.left
+            curr.left = curr.right
+            curr.right = temp
+
+            if curr.left:
+                stack.append(curr.left)
+            if curr.right:            
+                stack.append(curr.right)
+        
+        return root
+
 
 if __name__ == "__main__":
     solution = Solution()
