@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/subtree-of-another-tree/description/
-# time complexity: O(n)
-# space complexity: O(n)
+# time complexity: O(N × M) where N is the number of nodes in the root tree and M is the number of nodes in the subRoot tree.
+# space complexity: O(N + M) where N is the number of nodes in the root tree and M is the number of nodes in the subRoot tree.
 
 from typing import List, Optional
 

@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/
-# time complexity: O(n)
-# space complexity: O(n)
+# Time complexity is O(N) because each node is visited once.
+# Space complexity is O(H) due to recursion stack, where H is the tree height (worst case O(N)).
 
 from typing import Optional, List
 
@@ -47,16 +47,16 @@ class TreeNode:
 
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        self.goodNotes = []
+        self.nodesCount = 0
         self.dfs(root, root.val)
-        return len(self.goodNotes)
+        return self.nodesCount
     
     def dfs(self, root: TreeNode, maxVal: int) -> int:
         if root is None:
             return
         
         if root.val >= maxVal:
-            self.goodNotes.append(root.val)
+            self.nodesCount += 1
             maxVal = root.val
         
         self.dfs(root.left, maxVal)
