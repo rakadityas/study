@@ -1,6 +1,4 @@
 # https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
-# time complexity: O(n)
-# space complexity: O(n)
 
 from typing import Optional, List
 
@@ -46,6 +44,8 @@ class TreeNode:
         return result
     
 class Solution:
+    # time complexity: O(n)
+    # space complexity: O(n) for the array
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         self.treeValues = []
         self.dfs(root)
@@ -58,7 +58,28 @@ class Solution:
         self.dfs(root.left)
         self.treeValues.append(root.val)
         self.dfs(root.right)
-        return 
+        return
+    
+    # time complexity: O(n)
+    # space complexity: No array and only recursion stack → O(h)
+    def kthSmallestOptimal(self, root: Optional[TreeNode], k: int) -> int:
+        self.res = 0
+        self.k = k
+        self.dfsOptimal(root)
+        return self.res
+    
+    def dfsOptimal(self, root: Optional[TreeNode]):
+        if root is None:
+            return
+        
+        self.dfsOptimal(root.left)
+
+        self.k -= 1
+        if self.k == 0:
+            self.res = root.val
+        
+        self.dfsOptimal(root.right)
+        return
 
 if __name__ == "__main__":
     solution = Solution()
