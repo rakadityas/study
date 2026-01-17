@@ -50,22 +50,26 @@ class Solution:
         resp = self.dfs(root)
         return resp[1]
     
-    def dfs(self, root: Optional[TreeNode]) -> list:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        balanced, _ = self.dfs(root)
+        return balanced
+    
+    def dfs(self, root: Optional[TreeNode]) -> tuple[bool, int]:
         if root is None:
-            return 0, True
+            return True, 0
         
-        leftChild, isValid = self.dfs(root.left)
-        if isValid == False:
-            return [0, False]
-
-        rightChild, isValid = self.dfs(root.right)
-        if isValid == False:
-            return [0, False]
-
-        if abs(leftChild-rightChild) > 1: # means not balance
-            return [0, False]
+        leftBalanced, leftDepth = self.dfs(root.left)
+        if not leftBalanced:
+            return False, 0
         
-        return [max(leftChild+1, rightChild+1), True]
+        rightBalanced, rightDepth = self.dfs(root.right)
+        if not rightBalanced:
+            return False, 0
+        
+        if abs(leftDepth - rightDepth) > 1:
+            return False, 0
+        
+        return True, 1 + max(leftDepth, rightDepth)
 
 if __name__ == "__main__":
     solution = Solution()
