@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/subsets/description/
-# time complexity: O(2^n)
-# space complexity: O(n)
+# time complexity: O(n * 2^n) | 2ⁿ comes from the fact that each element independently has 2 choices (in or out), and those choices multiply across n elements.
+# space complexity: O(n * 2^n)
 
 class Solution:
     def subsets(self, nums: list[int]) -> list[list[int]]:
