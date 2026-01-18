@@ -7,20 +7,20 @@ import heapq
 
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
-        heapVal = []
-        heapq.heapify(heapVal)
+        heap = []
 
         for i in range(len(points)):
-            calcRes = (points[i][0] ** 2) + (points[i][1] ** 2)
-            heapq.heappush(heapVal, (calcRes, points[i]))
-        
-        outputRes = []
+            dist = points[i][0]*points[i][0] + points[i][1]*points[i][1]
+            heapq.heappush(heap, (dist * -1, points[i]))
 
-        while k > 0:
-            outputRes.append(heapq.heappop(heapVal)[1])
-            k = k -1
+            if len(heap) > k:
+                heapq.heappop(heap)
+
+        result = []
+        for i in range(len(heap)):
+            result.append(heap[i][1])
         
-        return outputRes
+        return result
 
 if "__name__" == "__main__":
     solution = Solution()
