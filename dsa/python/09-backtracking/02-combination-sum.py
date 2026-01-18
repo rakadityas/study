@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/combination-sum/description/
-# time complexity: O(2^n)
-# space complexity: O(n)
+# Time Complexity: Exponential (backtracking)
+# Space Complexity: O(target / min(candidates))
 
 from typing import List
 
