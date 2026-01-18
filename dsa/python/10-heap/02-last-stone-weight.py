@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/last-stone-weight/description/
-# time complexity: O(nlogn)
+# time complexity: O(nlogn) | n from the conversion, logn from the heap operations
 # space complexity: O(n)
 
 from typing import Optional, List
