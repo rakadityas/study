@@ -1,9 +1,10 @@
 # https://leetcode.com/problems/permutations/description/
-# time complexity: O(n!)
+# time complexity: O(n * n!) | n from copy result and n! from backtracking
 # space complexity: O(n)
 
 from typing import List
 
+# faster, because no need of hashing
 class SolutionList:
     def permute(self, nums: List[int]) -> List[List[int]]:
         self.res = []
