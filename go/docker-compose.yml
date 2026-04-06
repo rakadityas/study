@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: protocol
+      POSTGRES_PASSWORD: protocol
+      POSTGRES_DB: protocols
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./_infra/db/init.sql:/docker-entrypoint-initdb.d/00_init.sql:ro
+      - protocols_db_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:8
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+
+  ffmpeg_packager:
+    image: jrottenberg/ffmpeg:6.1-alpine
+    profiles: ["media"]
+    volumes:
+      - ./hls-dash/out:/out
+    entrypoint: ["/bin/sh", "-lc"]
+    command: >-
+      rm -rf /out/hls /out/dash &&
+      mkdir -p /out/hls /out/dash &&
+      ffmpeg -y
+      -f lavfi -i testsrc=size=1280x720:rate=30
+      -f lavfi -i sine=frequency=1000:sample_rate=48000
+      -t 12
+      -c:v libx264 -preset veryfast -g 60 -sc_threshold 0 -pix_fmt yuv420p
+      -c:a aac -b:a 128k
+      -f hls -hls_time 2 -hls_playlist_type vod -hls_segment_filename /out/hls/seg_%03d.ts /out/hls/master.m3u8
+      -f dash -seg_duration 2 -use_template 1 -use_timeline 1 -init_seg_name init-\$RepresentationID\$.m4s -media_seg_name chunk-\$RepresentationID\$-\$Number%05d\$.m4s /out/dash/manifest.mpd
+
+volumes:
+  protocols_db_data: {}
+
