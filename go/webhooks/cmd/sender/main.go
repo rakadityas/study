@@ -36,9 +36,9 @@ type createEventRequest struct {
 }
 
 type createEventResponse struct {
-	EventID       string   `json:"event_id"`
-	DeliveryIDs   []string `json:"delivery_ids"`
-	EndpointCount int      `json:"endpoint_count"`
+	EventID      string   `json:"event_id"`
+	DeliveryIDs  []string `json:"delivery_ids"`
+	EndpointCount int     `json:"endpoint_count"`
 }
 
 func main() {
