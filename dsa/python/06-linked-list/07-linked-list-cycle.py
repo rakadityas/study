@@ -43,7 +43,9 @@ class ListNode:
 
 
 class Solution:
-    # time and space o(n)
+    # Approach: hashmap — store each visited node; if we see it again, there's a cycle
+    # time complexity: O(n)
+    # space complexity: O(n) — hashmap stores every visited node
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         curr = head
         mapHistory = {}
@@ -55,7 +57,9 @@ class Solution:
         
         return False
 
-    # time o(n) and space o(1)
+    # Approach: Floyd's cycle detection — slow moves 1 step, fast moves 2; they meet iff a cycle exists
+    # time complexity: O(n)
+    # space complexity: O(1) — only two pointers
     def hasCycleOptimal(self, head: Optional[ListNode]) -> bool:
         slow = head
         fast = head

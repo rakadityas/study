@@ -7,6 +7,8 @@ import (
 )
 
 // threeSum finds unique triplets that sum to zero.
+// Approach: sort + two pointers; skip duplicate values in-place — no extra hashmap needed
+// time: O(n²), space: O(1) extra — sort is O(n log n), dominated by the O(n²) outer+inner pointer scan
 func threeSum(nums []int) [][]int {
     sort.Ints(nums)
     res := [][]int{}

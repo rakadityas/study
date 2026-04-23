@@ -2,6 +2,7 @@ package sliding_window
 
 import "testing"
 
+// time: O(m+n), space: O(1) — fixed 26-char frequency arrays; tracks a match-count to avoid full array comparison each step
 func checkInclusion(s1, s2 string) bool {
     if len(s1) > len(s2) { return false }
     cnt1 := make([]int, 26)

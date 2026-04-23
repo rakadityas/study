@@ -5,6 +5,8 @@ import (
     "testing"
 )
 
+// Approach: two-pointer gap — advance fast n steps ahead, then move both until fast.Next == nil; slow is at the node before target
+// time: O(n), space: O(1) — single pass with a dummy head to handle edge case of removing the first node
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
     dummy := &ListNode{Next: head}
     fast, slow := dummy, dummy

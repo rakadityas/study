@@ -2,6 +2,7 @@ package stack
 
 import "testing"
 
+// time: O(n), space: O(n) — for each character check if top+current forms a forbidden pair; if so pop, else push
 func removeOccurrencesPatterns(s string) string {
     patterns := map[string]bool{"ab":true,"bc":true,"cd":true,"dc":true,"cb":true,"ba":true}
     st := make([]rune, 0, len(s))

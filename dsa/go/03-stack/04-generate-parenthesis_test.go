@@ -5,6 +5,7 @@ import (
     "testing"
 )
 
+// time: O(4ⁿ/√n), space: O(n) — output count equals the nth Catalan number; recursion depth is at most 2n
 func generateParenthesis(n int) []string {
     res := []string{}
     var dfs func(open, close int, cur []byte)

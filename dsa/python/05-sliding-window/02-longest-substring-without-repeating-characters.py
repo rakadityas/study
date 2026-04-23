@@ -5,6 +5,9 @@
 from collections import defaultdict
 
 class Solution:
+    # Approach: shrink-window — delete from the left until the duplicate is gone, then expand right
+    # time complexity: O(n) — each character is added and removed from the map at most once
+    # space complexity: O(n) — map stores at most all unique characters in the window
     def lengthOfLongestSubstring(self, s: str) -> int:
         dictHistory = defaultdict(bool)
         res, l = 0, 0
@@ -18,6 +21,9 @@ class Solution:
         
         return res
     
+    # Approach: last-seen index — jump the left pointer directly to last_seen[char]+1, skipping the shrink loop
+    # time complexity: O(n) — single pass, no inner while loop
+    # space complexity: O(n)
     def lengthOfLongestSubstringLastSeen(self, s: str) -> int:
         left = 0 
         mapHistory = defaultdict(int)

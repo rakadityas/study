@@ -7,7 +7,8 @@ import (
 )
 
 // topKFrequent returns the k most frequent elements in nums.
-// Uses bucket sort on frequency counts for O(n) average time.
+// Approach: bucket sort — index bucket[freq] holds all numbers at that frequency, scan high→low
+// time: O(n), space: O(n) — no comparison-based sort; frequency range is bounded by n
 func topKFrequent(nums []int, k int) []int {
     if k == 0 || len(nums) == 0 {
         return []int{}

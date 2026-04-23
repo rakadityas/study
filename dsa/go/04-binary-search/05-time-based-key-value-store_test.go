@@ -2,6 +2,10 @@ package binary_search
 
 import "testing"
 
+// TimeMap stores timestamped values per key.
+// Set: O(1) amortized — append to the key's slice.
+// Get: O(log n) — binary search over the sorted timestamp list for the largest t ≤ timestamp.
+// Space: O(n) total for all stored entries.
 type TimeMap struct{ store map[string][]entry }
 type entry struct{ t int; v string }
 

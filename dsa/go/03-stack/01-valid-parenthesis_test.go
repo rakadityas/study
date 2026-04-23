@@ -3,6 +3,7 @@ package stack
 import "testing"
 
 // isValidParentheses checks if parentheses are valid using a stack.
+// time: O(n), space: O(n) — each character is pushed/popped at most once
 func isValidParentheses(s string) bool {
     stack := make([]rune, 0, len(s))
     pairs := map[rune]rune{')': '(', ']': '[', '}': '{'}

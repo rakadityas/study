@@ -1,10 +1,11 @@
 # https://leetcode.com/problems/subsets-ii/description/
-# time complexity: O(2^n)
-# space complexity: O(n)
 
 from typing import List
 from collections import defaultdict
 
+# Approach: sort then skip duplicate values in-place during backtracking — no extra hashmap needed
+# time complexity: O(2^n) — at most 2^n subsets after dedup
+# space complexity: O(n) — recursion stack depth
 class SolutionOne:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         res = []
@@ -27,6 +28,9 @@ class SolutionOne:
         backtracking(0, len(nums), [])
         return res
 
+# Approach: generate all subsets, deduplicate via a seen-set of tuple keys — easier to reason about but uses extra memory
+# time complexity: O(2^n) — same number of subsets, but tuple hashing adds overhead
+# space complexity: O(2^n) — seen set can hold up to 2^n tuple keys
 class SolutionTwo: # less optimal, but easier to understand
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         nums.sort()

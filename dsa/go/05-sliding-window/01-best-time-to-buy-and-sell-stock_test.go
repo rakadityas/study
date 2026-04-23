@@ -2,6 +2,7 @@ package sliding_window
 
 import "testing"
 
+// time: O(n), space: O(1) — track running minimum price; profit = current price − min so far
 func maxProfit(prices []int) int {
     minPrice := int(^uint(0) >> 1) // max int
     best := 0

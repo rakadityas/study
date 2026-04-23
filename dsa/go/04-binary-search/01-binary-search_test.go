@@ -3,6 +3,7 @@ package binary_search
 import "testing"
 
 // binarySearch returns the index of target in a sorted slice or -1.
+// time: O(log n), space: O(1) — halves the search range each iteration
 func binarySearch(nums []int, target int) int {
     l, r := 0, len(nums)-1
     for l <= r {

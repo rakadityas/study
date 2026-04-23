@@ -2,6 +2,7 @@ package array_hashes
 
 import "testing"
 
+// time: O(n), space: O(n) — build frequency maps for both strings, then compare
 func isAnagram(s string, t string) bool {
 	if len(s) != len(t) {
 		return false

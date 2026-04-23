@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// time: O(n), space: O(n) — single pass; store each value's index and check for the complement
 func twoSum(nums []int, target int) []int {
 	mapHistory := make(map[int]int)
 

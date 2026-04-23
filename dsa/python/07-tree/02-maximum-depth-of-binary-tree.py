@@ -46,6 +46,9 @@ class TreeNode:
         return result
 
 class Solution:
+    # Approach: recursive DFS — depth at each node = 1 + max(left depth, right depth)
+    # time complexity: O(n)
+    # space complexity: O(n) — recursion stack; O(h) average, O(n) worst case (skewed tree)
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         return self.dfs(root, 0)
         
@@ -56,7 +59,9 @@ class Solution:
         maxCounter = max(self.dfs(root.left, counter+1), self.dfs(root.right, counter+1))
         return maxCounter
     
-    # iterative more optimal
+    # Approach: iterative DFS with an explicit stack storing (node, depth) pairs
+    # time complexity: O(n)
+    # space complexity: O(n) — explicit stack; avoids Python's recursion limit
     def maxDepthIterative(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0

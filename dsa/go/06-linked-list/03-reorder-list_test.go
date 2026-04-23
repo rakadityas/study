@@ -5,6 +5,9 @@ import (
     "testing"
 )
 
+// Approach: find middle (slow/fast), reverse second half in-place, then interleave — no extra array needed
+// time: O(n), space: O(1) — three passes (find mid, reverse, merge), all in-place
+// Note: Python version used an O(n) array; this Go version achieves O(1) space
 func reorderList(head *ListNode) *ListNode {
     if head == nil || head.Next == nil { return head }
     // find middle

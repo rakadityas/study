@@ -2,6 +2,7 @@ package graph
 
 import "testing"
 
+// time: O(mn), space: O(mn) — each cell visited at most once; recursion stack depth is O(mn) in worst case (one big island)
 func numIslands(grid [][]byte) int {
     if len(grid)==0 { return 0 }
     m, n := len(grid), len(grid[0])

@@ -1,4 +1,7 @@
 # https://leetcode.com/problems/clone-graph/description/
+# time complexity: O(V+E) — visits every node and every edge once via DFS
+# space complexity: O(V) — mapVisited stores one entry per node
+
 from typing import List, Optional
 
 class Node:

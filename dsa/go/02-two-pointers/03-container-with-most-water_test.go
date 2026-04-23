@@ -3,6 +3,7 @@ package two_pointers
 import "testing"
 
 // maxArea calculates the maximum area of water container using two pointers.
+// time: O(n), space: O(1) — always move the shorter boundary inward to find a potentially taller pair
 func maxArea(height []int) int {
     i, j := 0, len(height)-1
     best := 0

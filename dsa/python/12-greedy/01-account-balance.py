@@ -1,3 +1,6 @@
+# time complexity: O(n) — single pass to split into sources/targets, then a two-pointer-style traversal
+# space complexity: O(n) — sources and targets lists together hold all n accounts
+
 # Say we have a number of bank accounts with name and balance. ie. ( name, balance )
 # At the end of each day we want to transfer money between accounts to ensure that each account
 # has at least 100 dollars in it.

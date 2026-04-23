@@ -6,6 +6,7 @@ import (
 )
 
 // isPalindrome checks if s is a palindrome considering only alphanumeric characters and ignoring cases.
+// time: O(n), space: O(1) — two pointers walk inward, skipping non-alphanumeric characters
 func isPalindrome(s string) bool {
 	i, j := 0, len(s)-1
 	for i < j {

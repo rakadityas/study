@@ -2,6 +2,7 @@ package binary_search
 
 import "testing"
 
+// time: O(log n), space: O(1) — determine which half is sorted, then decide which half to search
 func searchRotated(nums []int, target int) int {
     l, r := 0, len(nums)-1
     for l <= r {

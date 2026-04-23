@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/merge-two-sorted-lists/description/
-# time complexity: O(n)
-# space complexity: O(1)
+# time complexity: O(n+m) — iterates through both lists of length n and m
+# space complexity: O(1) — only a dummy head node, no extra structures
 
 from typing import Optional
 

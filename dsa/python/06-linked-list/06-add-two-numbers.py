@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/add-two-numbers/description/
-# time complexity: O(n)
-# space complexity: O(n)
+# time complexity: O(max(n, m)) — iterates until both lists and any remaining carry are exhausted
+# space complexity: O(max(n, m)) — result list length is at most max(n, m) + 1
 
 from typing import Optional
 

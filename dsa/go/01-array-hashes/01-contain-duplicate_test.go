@@ -6,6 +6,7 @@ import (
 	"testing"
 )
 
+// time: O(n), space: O(n) — single pass with a hashmap to track seen values
 func ContainsDuplicate(nums []int) bool {
 	mapHistory := make(map[int]bool)
 

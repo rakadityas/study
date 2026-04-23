@@ -1,3 +1,7 @@
+# https://leetcode.com/problems/rotting-oranges/description/
+# time complexity: O(mn) — each cell is processed at most once in BFS
+# space complexity: O(mn) — queue can hold all cells in the worst case
+
 from collections import deque
 from typing import List
 

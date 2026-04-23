@@ -2,6 +2,7 @@ package stack
 
 import "testing"
 
+// time: O(n), space: O(n) — single pass; operands are pushed onto the stack, operators pop two and push one result
 func evalRPN(tokens []string) int {
     st := []int{}
     for _, tok := range tokens {

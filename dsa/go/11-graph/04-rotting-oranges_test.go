@@ -2,6 +2,7 @@ package graph
 
 import "testing"
 
+// time: O(mn), space: O(mn) — BFS from all initially rotten oranges simultaneously; queue can hold all cells
 func orangesRotting(grid [][]int) int {
     m, n := len(grid), len(grid[0])
     q := [][2]int{}

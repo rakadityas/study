@@ -2,6 +2,7 @@ package graph
 
 import "testing"
 
+// time: O(mn), space: O(mn) — DFS marks visited cells as 0; recursion stack is O(mn) worst case
 func maxAreaOfIsland(grid [][]int) int {
     m, n := len(grid), len(grid[0])
     var dfs func(i, j int) int

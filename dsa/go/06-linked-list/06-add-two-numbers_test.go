@@ -5,6 +5,7 @@ import (
     "testing"
 )
 
+// time: O(max(n,m)), space: O(max(n,m)) — iterates until both lists and carry are exhausted; result list length is at most max(n,m)+1
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     dummy := &ListNode{}
     cur := dummy

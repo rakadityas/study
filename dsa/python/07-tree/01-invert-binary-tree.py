@@ -46,8 +46,9 @@ class TreeNode:
         return result
 
 class Solution:
-    # time complexity: O(n)
-    # space complexity: O(n)
+    # Approach: recursive DFS — swap children at each node, then recurse into both subtrees
+    # time complexity: O(n) — visits every node once
+    # space complexity: O(n) — recursion stack depth is O(h); O(n) in the worst case (skewed tree)
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if root is None:
             return None
@@ -60,7 +61,9 @@ class Solution:
         self.invertTree(root.right)
         return root
     
-    # better
+    # Approach: iterative DFS with an explicit stack — avoids recursion stack overhead
+    # time complexity: O(n)
+    # space complexity: O(n) — explicit stack holds at most O(h) nodes; O(n) worst case
     def invertTreeIterative(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:
             return root

@@ -3,6 +3,7 @@ package stack
 import "testing"
 
 // removeOccurrencesPart removes all occurrences of part from s.
+// time: O(n·m), space: O(n) — for each pushed character, check if the tail of the stack matches part (O(m) check)
 func removeOccurrencesPart(s, part string) string {
 	st := []rune{}
 	pr := []rune(part)

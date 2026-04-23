@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 # time complexity: O(n)
-# space complexity: O(1)
+# space complexity: O(n) — uses a defaultdict to track seen values; since the array is sorted, this map is unnecessary and can be replaced with a simple adjacent-element comparison to get O(1) space
 
 from typing import List
 from collections import defaultdict

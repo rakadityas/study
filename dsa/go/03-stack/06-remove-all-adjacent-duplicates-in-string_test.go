@@ -2,6 +2,7 @@ package stack
 
 import "testing"
 
+// time: O(n), space: O(n) — stack-based; pop when top matches current char, otherwise push
 func removeDuplicatesString(s string) string {
     st := make([]rune, 0, len(s))
     for _, ch := range s {

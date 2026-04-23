@@ -3,6 +3,7 @@ package two_pointers
 import "testing"
 
 // removeDuplicates removes duplicates from sorted array and returns new length.
+// time: O(n), space: O(1) — compares adjacent elements (no hashmap needed since array is sorted)
 func removeDuplicates(nums []int) int {
     if len(nums) == 0 { return 0 }
     k := 1

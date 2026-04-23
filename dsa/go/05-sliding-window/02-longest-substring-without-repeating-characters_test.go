@@ -3,6 +3,8 @@ package sliding_window
 import "testing"
 
 // lengthOfLongestSubstring returns the length of the longest substring without repeating characters.
+// Approach: last-seen-index — jump the left pointer directly to last_seen[char]+1 instead of shrinking one step at a time
+// time: O(n), space: O(n) — single pass; map stores at most all distinct characters
 func lengthOfLongestSubstring(s string) int {
     last := make(map[rune]int)
     maxLen := 0

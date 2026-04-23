@@ -8,6 +8,7 @@ import (
 	"github.com/rakadityas/study/dsa/go/common"
 )
 
+// time: O(n·m), space: O(n·m) — n words, m = max word length; key is the 26-char frequency array
 func groupAnagrams(strs []string) [][]string {
 	mapRespGroup := make(map[string][]string)
 	res := [][]string{}

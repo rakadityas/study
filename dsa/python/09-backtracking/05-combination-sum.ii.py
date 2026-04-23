@@ -1,9 +1,10 @@
 # https://leetcode.com/problems/combination-sum-ii/description/
-# time complexity: O(2^n)
-# space complexity: O(n)
 
 from typing import List
 
+# Approach: sort descending, backtrack, deduplicate via a hashmap of seen combination tuples
+# time complexity: O(2^n) — at most 2^n combinations; tuple hashing adds overhead per result
+# space complexity: O(n) for recursion + O(results) for the hashmap
 class SolutionOne:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         candidates.sort(reverse=True)
@@ -32,6 +33,9 @@ class SolutionOne:
 
         return res
 
+# Approach: sort ascending, backtrack, skip duplicate candidates at each level by tracking prev value — no hashmap needed
+# time complexity: O(2^n)
+# space complexity: O(n) — only recursion stack
 class SolutionTwo:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []

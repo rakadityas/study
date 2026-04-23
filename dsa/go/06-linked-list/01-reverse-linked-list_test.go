@@ -11,6 +11,7 @@ type ListNode struct {
 }
 
 // reverseList reverses a singly linked list.
+// time: O(n), space: O(1) — iterative; prev/cur/next pointers only
 func reverseList(head *ListNode) *ListNode {
 	var prev *ListNode
 	cur := head

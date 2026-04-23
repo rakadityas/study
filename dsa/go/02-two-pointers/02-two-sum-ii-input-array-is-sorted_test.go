@@ -6,6 +6,7 @@ import (
 )
 
 // twoSumII returns 1-based indices of two numbers that add up to target.
+// time: O(n), space: O(1) — two pointers on sorted array; move left up when sum is too small, right down when too large
 func twoSumII(numbers []int, target int) []int {
     i, j := 0, len(numbers)-1
     for i < j {

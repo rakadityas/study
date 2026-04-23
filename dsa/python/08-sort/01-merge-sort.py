@@ -1,3 +1,6 @@
+# time complexity: O(n log n) — log n levels of recursion, each doing O(n) merge work
+# space complexity: O(n) — temporary arrays allocated during each merge step
+
 from typing import List
 
 class Solution:

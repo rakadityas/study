@@ -6,6 +6,7 @@ import (
 )
 
 // dailyTemperatures returns the number of days to wait for a warmer temperature.
+// time: O(n), space: O(n) — monotonic decreasing stack of indices; each index is pushed and popped at most once
 func dailyTemperatures(temperatures []int) []int {
     n := len(temperatures)
     res := make([]int, n)

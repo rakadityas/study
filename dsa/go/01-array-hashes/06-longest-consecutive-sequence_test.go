@@ -3,6 +3,7 @@ package array_hashes
 import "testing"
 
 // longestConsecutive returns length of the longest consecutive sequence.
+// time: O(n), space: O(n) — only start counting from sequence heads (no left neighbor), so each element is visited at most twice
 func longestConsecutive(nums []int) int {
     set := make(map[int]bool, len(nums))
     for _, n := range nums { set[n] = true }

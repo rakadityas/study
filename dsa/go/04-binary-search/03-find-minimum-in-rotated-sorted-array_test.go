@@ -2,6 +2,7 @@ package binary_search
 
 import "testing"
 
+// time: O(log n), space: O(1) — if mid > right the minimum is in the right half; otherwise shrink right to mid
 func findMin(nums []int) int {
     l, r := 0, len(nums)-1
     for l < r {

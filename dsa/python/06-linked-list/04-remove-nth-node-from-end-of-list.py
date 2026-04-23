@@ -33,7 +33,9 @@ class ListNode:
         print(" -> ".join(map(str, self.toList())) + " -> None")
 
 class Solution:
-    # uses o(n) time and space 
+    # Approach: collect all nodes into an array, then do O(1) index lookup
+    # time complexity: O(n)
+    # space complexity: O(n) — stores all nodes in an array
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         nodeArr = []
 
@@ -51,7 +53,9 @@ class Solution:
         
         return head
     
-    # uses o(n) time and o(1) space 
+    # Approach: count total length, then walk to the target node with a prev pointer
+    # time complexity: O(n) — two passes: one to count, one to remove
+    # space complexity: O(1) — no extra data structures
     def removeNthFromEndOptimal(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:        
         counter = 0
         curr = head

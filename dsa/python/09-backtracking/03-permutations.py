@@ -4,7 +4,9 @@
 
 from typing import List
 
-# faster, because no need of hashing
+# Approach: boolean array to track used indices — faster than hashing, direct index access
+# time complexity: O(n·n!) — n! permutations, each costs O(n) to copy
+# space complexity: O(n) — boolean record array + recursion stack depth O(n)
 class SolutionList:
     def permute(self, nums: List[int]) -> List[List[int]]:
         self.res = []
@@ -26,6 +28,9 @@ class SolutionList:
             permutation.pop()
             record[i] = False
 
+# Approach: set to track used indices — O(1) average lookup but set overhead vs plain array
+# time complexity: O(n·n!)
+# space complexity: O(n) — set size bounded by n + recursion stack
 class SolutionSet:
     def permute(self, nums: List[int]) -> List[List[int]]:
         self.res = []
@@ -47,6 +52,9 @@ class SolutionSet:
             setHistory.remove(i)
             permutation.pop()
 
+# Approach: dict to track used indices — functionally same as SolutionSet; dict has slightly more overhead than set
+# time complexity: O(n·n!)
+# space complexity: O(n)
 class SolutionDict:
     def permute(self, nums: List[int]) -> List[List[int]]:
         self.res = []

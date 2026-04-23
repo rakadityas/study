@@ -3,6 +3,7 @@ package two_pointers
 import "testing"
 
 // removeElement removes all instances of val in-place and returns the new length.
+// time: O(n), space: O(1) — single pass with a write pointer k that only advances for non-val elements
 func removeElement(nums []int, val int) int {
     k := 0
     for _, x := range nums {

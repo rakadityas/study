@@ -3,6 +3,7 @@ package array_hashes
 import "testing"
 
 // isColorful checks if number is colorful: all products of contiguous subsequences are unique.
+// time: O(d²), space: O(d²) — d = number of digits; nested loop over all O(d²) substrings
 func isColorful(number int) bool {
     numStr := []byte((func(n int) string { return fmtInt(n) })(number))
     products := make(map[int]bool)

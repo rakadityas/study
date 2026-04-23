@@ -44,8 +44,9 @@ class TreeNode:
         return result
     
 class Solution:
-    # time complexity: O(n)
-    # space complexity: O(n) for the array
+    # Approach: in-order DFS collecting all values into a sorted array, then index into it
+    # time complexity: O(n) — visits every node
+    # space complexity: O(n) — stores all node values in treeValues array
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         self.treeValues = []
         self.dfs(root)
@@ -60,8 +61,9 @@ class Solution:
         self.dfs(root.right)
         return
     
-    # time complexity: O(n)
-    # space complexity: No array and only recursion stack → O(h)
+    # Approach: in-order DFS with early stopping — count down k as we visit; stop as soon as k hits 0
+    # time complexity: O(n) worst case, O(h + k) average — stops as soon as kth element is found
+    # space complexity: O(h) — only recursion stack, no extra array
     def kthSmallestOptimal(self, root: Optional[TreeNode], k: int) -> int:
         self.res = 0
         self.k = k

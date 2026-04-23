@@ -46,7 +46,9 @@ class TreeNode:
         return result
 
 class Solution:
-    # Time: O(n), Space: O(n)
+    # Approach: DFS visiting right child first; the first node logged at each depth is the rightmost
+    # time complexity: O(n)
+    # space complexity: O(n) — listTree stores all nodes grouped by depth
     def rightSideViewQueue(self, root: Optional[TreeNode]) -> List[int]:
         self.listTree = [] # creates a queue of each tree depth
         self.dfsRightSideViewQueue(root, 0)
@@ -72,7 +74,9 @@ class Solution:
 
         return
     
-    # Time: O(n), Space: O(n)
+    # Approach: DFS right-first, passing the result list down; append only when depth == len(resp) (first visit at that level)
+    # time complexity: O(n)
+    # space complexity: O(n) — result list + O(h) recursion stack
     def rightSideViewList(self, root: Optional[TreeNode]) -> List[int]:
         return self.traverseTreeList(root, [], 0)
 

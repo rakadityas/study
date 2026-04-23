@@ -1,10 +1,11 @@
 # https://leetcode.com/problems/kth-largest-element-in-a-stream/description/
-# time complexity: O(nlogk)
-# space complexity: O(k)
 
 from typing import List
 import heapq
 
+# Approach: min-heap of size k; after each push, pop until heap size == k via a separate maintainHeap loop
+# time complexity: O(n log k) — each add does a push + conditional pops
+# space complexity: O(k) — heap is capped at k elements
 class KthLargest:
     def __init__(self, k: int, nums: List[int]):
         self.minHeap = nums
@@ -24,7 +25,9 @@ class KthLargest:
             heapq.heappop(self.minHeap)
         return
 
-# removing the maintain heap functionality, uses heapreplace instead
+# Approach: same min-heap of size k, but uses heapreplace (atomic pop+push) to avoid unnecessary heap resizes
+# time complexity: O(n log k) — same asymptotic, but heapreplace is faster in practice (one heap operation vs two)
+# space complexity: O(k)
 class KthLargestOptimal:
     def __init__(self, k: int, nums: List[int]):
         self.k = k

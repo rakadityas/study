@@ -5,6 +5,7 @@ import (
     "testing"
 )
 
+// time: O(n+m), space: O(1) — dummy head trick; weave nodes from both lists without allocating new nodes
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
     dummy := &ListNode{}
     cur := dummy

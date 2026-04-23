@@ -5,6 +5,9 @@
 from collections import defaultdict
 
 class Solution:
+    # Approach: count frequencies, then repeatedly call max() to extract top-k groups
+    # time complexity: O(n·k) worst case — max() over distinct keys runs up to k times
+    # space complexity: O(n)
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
 
         mapNumsHistory = defaultdict(int)
@@ -28,6 +31,9 @@ class Solution:
         
         return res
     
+    # Approach: bucket sort — index bucket[freq] holds all numbers with that frequency, then scan from high to low
+    # time complexity: O(n) — no comparison-based sort; frequency range is bounded by n
+    # space complexity: O(n)
     def topKFrequentBucketSort(self, nums: list[int], k: int) -> list[int]:
         lenNums = len(nums)
         mapCounter = defaultdict(int)

@@ -2,8 +2,9 @@
 
 from typing import List
 
-# time complexity: O(n^2)
-# space complexity: O(n)
+# Approach: sort + two pointers, deduplicate via a hashmap of seen tuples
+# time complexity: O(n^2) — outer loop O(n) × inner two-pointer O(n)
+# space complexity: O(n) — hashmap stores up to n result tuples for dedup
 class SolutionOne:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         lenNums = len(nums)-1
@@ -31,8 +32,9 @@ class SolutionOne:
                     r -= 1        
         return res
 
-# time complexity: O(n^2)
-# space complexity: O(1)
+# Approach: sort + two pointers, deduplicate by skipping repeated values in-place
+# time complexity: O(n^2) — same as SolutionOne
+# space complexity: O(1) — no extra hashmap; duplicates are skipped by comparing adjacent sorted values
 class SolutionTwo:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()

@@ -7,6 +7,7 @@ type GraphNode struct {
     Neighbors []*GraphNode
 }
 
+// time: O(V+E), space: O(V) — DFS visits every node and edge once; map stores one clone per node
 func cloneGraph(node *GraphNode) *GraphNode {
     if node == nil { return nil }
     m := map[*GraphNode]*GraphNode{}

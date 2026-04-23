@@ -2,8 +2,9 @@
 
 import heapq
 
-# time complexity: O(nlogn): n for the conversion, logn for the heap operations, because we are converting everything first then it will be nlogn
-# space complexity: O(n)
+# Approach: negate all values → heapify the whole array into a max-heap → pop k-1 times to reach kth largest
+# time complexity: O(n log n) — heapify is O(n), but k pops are each O(log n); total O(n log n) worst case
+# space complexity: O(n) — heapify modifies in-place but logically uses O(n) heap space
 class Solution:
     def findKthLargest(self, nums: list[int], k: int) -> int:
         for i in range(len(nums)):
@@ -17,8 +18,9 @@ class Solution:
         
         return heapq.heappop(nums) * -1
 
-# time complexity: O(nlogk): k is the size of the heap, n is the number of elements in the array
-# space complexity: O(k)
+# Approach: maintain a min-heap of size k; push each element and pop if heap exceeds k → root is the kth largest
+# time complexity: O(n log k) — each of the n elements does a push+conditional pop into a heap of size k
+# space complexity: O(k) — heap never exceeds k elements
 class SolutionOptimal:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         heap = []

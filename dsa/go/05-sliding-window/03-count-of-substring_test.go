@@ -2,7 +2,8 @@ package sliding_window
 
 import "testing"
 
-// Port of SolutionOne.countOfSubstring from Python: counts specific metric per given logic.
+// countOfSubstring counts substrings per the problem's metric (port of Python SolutionOne).
+// time: O(n), space: O(n) — sliding window; left jumps to i when a duplicate is found
 func countOfSubstring(s string) int {
     l := 0
     mapHistory := map[byte]bool{}

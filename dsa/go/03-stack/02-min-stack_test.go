@@ -2,6 +2,10 @@ package stack
 
 import "testing"
 
+// MinStack supports push/pop/top/getMin all in O(1) time.
+// Approach: auxiliary min-slice that only records a new min when the pushed value is ≤ current min,
+// saving space compared to mirroring every push.
+// time: O(1) per operation, space: O(n) worst case
 type MinStack struct {
     s   []int
     min []int

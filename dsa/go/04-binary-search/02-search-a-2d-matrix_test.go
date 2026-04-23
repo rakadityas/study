@@ -2,6 +2,7 @@ package binary_search
 
 import "testing"
 
+// time: O(log(m·n)), space: O(1) — treat the m×n matrix as a flat sorted array and binary search on virtual index
 func searchMatrix(matrix [][]int, target int) bool {
     if len(matrix) == 0 || len(matrix[0]) == 0 { return false }
     m, n := len(matrix), len(matrix[0])

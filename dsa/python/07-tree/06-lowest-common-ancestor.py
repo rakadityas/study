@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
-# time complexity: O(n)
-# space complexity: O(n)
+# time complexity: O(n) — O(h) in a balanced BST where h = log n
+# space complexity: O(1) — iterative while loop, no recursion stack
 
 from typing import Optional
 

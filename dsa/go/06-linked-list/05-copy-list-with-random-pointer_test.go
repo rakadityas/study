@@ -8,6 +8,7 @@ type RandomNode struct {
     Random *RandomNode
 }
 
+// time: O(n), space: O(n) — two passes: first creates all clone nodes (map old→new), second wires Next and Random
 func copyRandomList(head *RandomNode) *RandomNode {
     if head == nil { return nil }
     m := map[*RandomNode]*RandomNode{}
