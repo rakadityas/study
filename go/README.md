@@ -34,4 +34,5 @@ DATABASE_URL=postgres://protocol:protocol@localhost:5432/protocols?sslmode=disab
 - [hls-dash](./hls-dash): live-like streaming using playlists/manifests + segment files over HTTP.
 - [webrtc](./webrtc): UDP-based peer-to-peer media/data via WebRTC (with WebSocket signaling).
 - [p2p](./p2p): simple peer discovery + gossip over a custom TCP protocol.
+- [kafka](./kafka): distributed commit log with topics, partitions, consumer groups, and offsets.
 
