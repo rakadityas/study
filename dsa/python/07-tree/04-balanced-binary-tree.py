@@ -47,10 +47,6 @@ class TreeNode:
 
 class Solution:
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        resp = self.dfs(root)
-        return resp[1]
-    
-    def isBalanced(self, root: Optional[TreeNode]) -> bool:
         balanced, _ = self.dfs(root)
         return balanced
     
