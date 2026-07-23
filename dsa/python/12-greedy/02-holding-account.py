@@ -36,10 +36,8 @@ class HoldingAccount:
                 break
 
             self.pending.popleft()
-            for i in range(len(group)):
-                account, amount = group[i]
-                self.balance -= amount
-                released.append((account, amount))
+            self.balance -= total
+            released = group
 
         return released
 
