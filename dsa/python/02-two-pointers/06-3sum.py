@@ -69,6 +69,31 @@ class SolutionTwo:
         
         return res
 
+# Approach: fix i, then use a hash set to find pairs summing to -nums[i] (no sorting the array itself)
+# time complexity: O(n^2) — outer loop O(n) x inner hash-set scan O(n)
+# space complexity: O(n) — hash set per outer iteration + a set of seen sorted triplets for dedup
+class SolutionThree:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        seen = set()
+
+        for i in range(len(nums)):
+            target = -nums[i]
+            twoSum = set()
+
+            for j in range(i + 1, len(nums)):
+                complement = target - nums[j]
+
+                if complement in twoSum:
+                    triplet = tuple(sorted([nums[i], nums[j], complement]))
+                    if triplet not in seen:
+                        seen.add(triplet)
+                        res.append(list(triplet))
+
+                twoSum.add(nums[j])
+
+        return res
+
 if __name__ == "__main__":
     solution = SolutionOne()
     assert solution.threeSum([-1,0,1,2,-1,-4]) == [[-1, 2, -1], [-1, 1, 0]]
@@ -81,4 +106,10 @@ if __name__ == "__main__":
     assert solution.threeSum([0,1,1]) == []
     assert solution.threeSum([0,0,0]) == [[0,0,0]]
     assert solution.threeSum([0,0,0,0]) == [[0,0,0]]
-        
+
+    solution = SolutionThree()
+    assert sorted(solution.threeSum([-1,0,1,2,-1,-4])) == sorted([[-1, -1, 2], [-1, 0, 1]])
+    assert solution.threeSum([0,1,1]) == []
+    assert solution.threeSum([0,0,0]) == [[0,0,0]]
+    assert solution.threeSum([0,0,0,0]) == [[0,0,0]]
+
