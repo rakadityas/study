@@ -4,6 +4,9 @@ The objective is to be the first to align three of your symbols horizontally, ve
 diagonally, upon which you win the game.
 """
 
+# time complexity: O(1) - board is a fixed 3x3 size, so all checks are a constant number of cell lookups
+# space complexity: O(1) - board size is fixed, no data structure grows with input
+
 from typing import Literal, Tuple, List
 
 class TicTacToe:
