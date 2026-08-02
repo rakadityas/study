@@ -82,6 +82,22 @@ class Solution:
         
         self.dfsOptimal(root.right)
         return
+    
+    def dfsOptimalPruning(self, root: Optional[TreeNode]):
+        if root is None or self.k == 0:
+            return
+
+        self.dfsOptimal(root.left)
+        if self.k == 0:
+            return
+
+        self.k -= 1
+        if self.k == 0:
+            self.res = root.val
+            return
+
+        self.dfsOptimal(root.right)
+        return
 
 if __name__ == "__main__":
     solution = Solution()
