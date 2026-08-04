@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/longest-common-prefix/description/
+
 from typing import List
 
 class Solution:
@@ -65,7 +67,6 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.GetSameLetter(["APPLE", "APP", "APPLAUD"]), "hello")
     assert sol.GetSameLetter(["APPLE", "APP", "APPLAUD"]) == "APP"
     assert sol.GetSameLetter(["BANANA", "BAN", "BLUE"]) == "B"
     assert sol.GetSameLetter(["BANANA", "APPLE", "CAR"]) == ""
