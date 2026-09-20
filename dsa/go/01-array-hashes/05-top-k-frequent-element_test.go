@@ -40,6 +40,40 @@ func topKFrequent(nums []int, k int) []int {
     return res
 }
 
+// topKFrequentMaxScan returns the same result by repeatedly taking the highest remaining frequency.
+// Approach: count frequencies, group numbers by frequency, then pull whole groups off the top by
+// scanning for the max key until k values have been collected
+// time: O(n*k) worst case, space: O(n) — the max scan over distinct frequencies runs up to k times
+func topKFrequentMaxScan(nums []int, k int) []int {
+    mapNumsHistory := map[int]int{}
+    for _, n := range nums {
+        mapNumsHistory[n]++
+    }
+
+    mapGroupNums := map[int][]int{}
+    for key, value := range mapNumsHistory {
+        mapGroupNums[value] = append(mapGroupNums[value], key)
+    }
+
+    res := []int{}
+    for k > 0 && len(mapGroupNums) > 0 {
+        maxKey := 0
+        for freq := range mapGroupNums {
+            if freq > maxKey { maxKey = freq }
+        }
+
+        for _, val := range mapGroupNums[maxKey] {
+            res = append(res, val)
+            k--
+            if k == 0 { return res }
+        }
+
+        delete(mapGroupNums, maxKey)
+    }
+
+    return res
+}
+
 func TestTopKFrequent(t *testing.T) {
     testCases := []struct {
         name     string
@@ -69,15 +103,21 @@ func TestTopKFrequent(t *testing.T) {
 
     for _, tc := range testCases {
         t.Run(tc.name, func(t *testing.T) {
-            got := topKFrequent(tc.nums, tc.k)
             // Sort both for comparison since order among same frequency is not guaranteed
-            sort.Ints(got)
             exp := make([]int, len(tc.expected))
             copy(exp, tc.expected)
             sort.Ints(exp)
 
+            got := topKFrequent(tc.nums, tc.k)
+            sort.Ints(got)
             if !reflect.DeepEqual(got, exp) {
                 t.Errorf("topKFrequent(%v, %d) = %v; want %v", tc.nums, tc.k, got, exp)
+            }
+
+            gotMaxScan := topKFrequentMaxScan(tc.nums, tc.k)
+            sort.Ints(gotMaxScan)
+            if !reflect.DeepEqual(gotMaxScan, exp) {
+                t.Errorf("topKFrequentMaxScan(%v, %d) = %v; want %v", tc.nums, tc.k, gotMaxScan, exp)
             }
         })
     }

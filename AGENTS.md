@@ -49,7 +49,7 @@ Both Go and Python follow the same 12-topic numbered structure:
 | 09 | backtracking |
 | 10 | heap |
 | 11 | graph |
-| 12 | greedy (Python only) |
+| 12 | greedy |
 
 File naming: `NN-problem-name.py` / `NN-problem-name_test.go`
 

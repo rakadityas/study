@@ -21,6 +21,27 @@ func lengthOfLongestSubstring(s string) int {
     return maxLen
 }
 
+// lengthOfLongestSubstringShrink answers the same question one step at a time.
+// Approach: shrink-window — while the incoming character is already in the window, evict the
+// leftmost character until the duplicate is gone, then expand right
+// time: O(n), space: O(n) — each character enters and leaves the map at most once
+func lengthOfLongestSubstringShrink(s string) int {
+    dictHistory := map[byte]bool{}
+    res, l := 0, 0
+
+    for i := 0; i < len(s); i++ {
+        for dictHistory[s[i]] {
+            delete(dictHistory, s[l])
+            l++
+        }
+
+        if i-l+1 > res { res = i - l + 1 }
+        dictHistory[s[i]] = true
+    }
+
+    return res
+}
+
 func TestLengthOfLongestSubstring(t *testing.T) {
     cases := []struct{ s string; want int }{
         {"abcabcbb", 3},
@@ -33,6 +54,9 @@ func TestLengthOfLongestSubstring(t *testing.T) {
     for _, c := range cases {
         if got := lengthOfLongestSubstring(c.s); got != c.want {
             t.Fatalf("lengthOfLongestSubstring(%q) = %d; want %d", c.s, got, c.want)
+        }
+        if got := lengthOfLongestSubstringShrink(c.s); got != c.want {
+            t.Fatalf("lengthOfLongestSubstringShrink(%q) = %d; want %d", c.s, got, c.want)
         }
     }
 }
