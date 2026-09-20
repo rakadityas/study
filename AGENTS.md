@@ -20,7 +20,8 @@ Use this file to understand how the repo is organized and how to work within it.
 │   ├── sse/
 │   ├── webrtc/
 │   ├── websocket/
-│   └── go_bench/    # Go benchmarking examples
+│   ├── go_bench/    # Go benchmarking examples
+│   └── basic/       # Go advanced crash course (test-driven)
 ├── python/
 │   └── oop_basic/   # Python OOP fundamentals
 ├── ruby/
@@ -115,8 +116,13 @@ Each subdirectory is an **independent Go module** with its own `go.mod`. They de
 | `hls-dash/` | HLS/DASH streaming |
 | `webrtc/` | WebRTC signaling |
 | `go_bench/` | Go benchmark patterns (5 progressive examples) |
+| `basic/` | Go language/runtime crash course (10 topic packages, test-driven) |
 
 Run a sample: `cd go/<dir> && go run ./cmd/...`
+
+`basic/` has no `cmd/` — it is read and run as tests: `cd go/basic && go test ./...`
+(use `-race` for the concurrency topics, `-bench=. -benchmem` for `07_memory`).
+It is the only module here that is kept gofmt-clean.
 
 ---
 

@@ -26,6 +26,7 @@ DATABASE_URL=postgres://protocol:protocol@localhost:5432/protocols?sslmode=disab
 
 ## Examples
 
+- [basic](./basic): Go language and runtime crash course (types, concurrency, context, memory, testing).
 - [http](./http): REST/JSON over HTTP with Postgres persistence.
 - [grpc](./grpc): gRPC request/response RPCs with Postgres persistence.
 - [sse](./sse): server pushes events to clients over HTTP using Server-Sent Events.
